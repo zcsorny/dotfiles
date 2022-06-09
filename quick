@@ -1,0 +1,15 @@
+  67 Plug 'jpalardy/vim-slime', { 'for': 'python' }
+:ew:wq
+ 
+ " always use tmux
+112 let g:slime_target = 'tmux'
+113
+114 " fix paste issues in ipython
+115 let g:slime_python_ipython = 1
+116
+117 " always send text to the top-right pane in the current tmux tab without asking
+118 let g:slime_default_config = {
+119             \ 'socket_name': get(split($TMUX, ','), 0),
+120             \ 'target_pane': '{top-right}' }
+121 let g:slime_dont_ask_default = 1
+122 filetype plugin on
